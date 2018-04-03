@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions, Text, TouchableOpacity, Linking } from 'react-native';
+import { View, StyleSheet, Dimensions, Text, Linking } from 'react-native';
 import { Constants } from 'expo';
 import MapView, { Marker, Callout } from 'react-native-maps';
 var {deviceHeight, deviceWidth} = Dimensions.get('window');
