@@ -67,7 +67,7 @@ export default class App extends Component {
     return (
           <View style={styles.container}>
             <MapView
-              style={{ alignSelf: 'stretch', height: 700}}
+              style={styles.mapStyle}
               initialRegion={this.state.mapRegion}
               onRegionChange={this._handleMapRegionChange}>
               {this.state.markers.map(marker => (
@@ -78,11 +78,11 @@ export default class App extends Component {
                   description={marker.description}>
                   <Callout onPress={() => this.openExternalApp(marker.url)}>
                     <View>
-                      <Text style={{textAlign: 'center', fontWeight: 'bold'}}>{marker.title}</Text>
+                      <Text style={styles.textBold}>{marker.title}</Text>
                       <Text>{marker.description}</Text>
-                      <TouchableOpacity style={{backgroundColor: 'aquamarine', height: 40, justifyContent: 'center', alignItems: 'center'}}>
-                        <Text style={{textAlign: 'center'}}>Tap to get directions!</Text>
-                      </TouchableOpacity>
+                      <View style={styles.blueView}>
+                        <Text style={styles.text}>Tap to get directions!</Text>
+                      </View>
                     </View>
                 </Callout>
                 </Marker>
@@ -101,11 +101,22 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
+  mapStyle: {
+    alignSelf: 'stretch',
+    height: 700
   },
+  text: {
+    textAlign: 'center'
+  },
+  textBold: {
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  blueView: {
+    backgroundColor: 'aquamarine',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
 });
