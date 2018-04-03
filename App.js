@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Dimensions, Text, Linking } from 'react-native';
 import { Constants } from 'expo';
 import MapView, { Marker, Callout } from 'react-native-maps';
-var {deviceHeight, deviceWidth} = Dimensions.get('window');
 
 export default class App extends Component {
   state = {
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
   },
   mapStyle: {
     alignSelf: 'stretch',
-    height: 700
+    flex: 1,
   },
   text: {
     textAlign: 'center'
