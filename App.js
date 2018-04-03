@@ -67,7 +67,7 @@ export default class App extends Component {
     return (
           <View style={styles.container}>
             <MapView
-              style={{ alignSelf: 'stretch', height: 700}}
+              style={{ alignSelf: 'stretch', height: 400}}
               initialRegion={this.state.mapRegion}
               onRegionChange={this._handleMapRegionChange}>
             </MapView>
